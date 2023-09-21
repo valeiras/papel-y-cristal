@@ -63,6 +63,8 @@ const Wrapper = styled.div`
   overflow: hidden;
   position: absolute;
   box-shadow: var(--shadow-1);
+  background-color: var(--theme-color-white);
+
   .links {
     margin-top: 1px;
     background-color: var(--theme-color-white);
@@ -70,6 +72,9 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    box-shadow: var(--shadow-1);
+    position: relative;
+    border-radius: var(--borderRadius);
   }
   .single-link {
     font-size: 1.2rem;

@@ -3,9 +3,10 @@ import { FaChevronDown } from 'react-icons/fa';
 
 const Fullpage: React.FC<{
   children: React.ReactNode;
+  title: string;
   selfId: string;
   nextId?: string;
-}> = ({ children, selfId, nextId }) => {
+}> = ({ children, title, selfId, nextId }) => {
   const handleBtnClick = () => {
     if (nextId) {
       const linkedElement = document.getElementById(nextId);
@@ -15,7 +16,9 @@ const Fullpage: React.FC<{
 
   return (
     <Wrapper id={selfId}>
-      {children}
+      <h1>{title}</h1>
+      <div className="hor-line"></div>
+      <div className="child-container">{children}</div>
       {nextId && (
         <FaChevronDown className="arrow-down-btn" onClick={handleBtnClick} />
       )}
@@ -30,17 +33,27 @@ const Wrapper = styled.div`
   scroll-margin-top: var(--navbar-height);
   display: flex;
   flex-direction: column;
+  padding: 3rem var(--side-padding) 2rem;
+
+  --side-padding: 10vw;
 
   .arrow-down-btn {
     margin: 0 auto;
     cursor: pointer;
     font-size: 1.5rem;
     transition: var(--transition);
-    margin-bottom: 1rem;
   }
 
   .arrow-down-btn:hover {
     transform: translateY(3px);
+  }
+
+  .hor-line {
+    height: 2px;
+    width: calc(100% + var(--side-padding));
+    background-color: var(--theme-color-dark-green);
+    margin-top: 0.5rem;
+    position: relative;
   }
 
   &:nth-child(3n) {
@@ -54,5 +67,35 @@ const Wrapper = styled.div`
   &:nth-child(3n + 2) {
     background-color: var(--theme-color-dark-green);
     color: var(--theme-color-white);
+    font-weight: 300;
+
+    h1 {
+      font-weight: 300;
+    }
+    .hor-line {
+      background-color: var(--theme-color-white);
+    }
+  }
+
+  .child-container {
+    flex: 1;
+  }
+
+  &:nth-child(odd) {
+    .hor-line {
+      right: var(--side-padding);
+    }
+    h1 {
+      text-align: right;
+    }
+  }
+
+  &:nth-child(even) {
+    /* .hor-line {
+      margin-right: calc(var(--side-padding) * -1);
+    } */
+    h1 {
+      text-align: left;
+    }
   }
 `;

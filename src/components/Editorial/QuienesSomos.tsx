@@ -4,13 +4,11 @@ import styled from 'styled-components';
 
 const QuienesSomos: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
-    <Fullpage selfId={QUIENES_SOMOS} nextId={nextId}>
-      <Wrapper>Quiénes Somos</Wrapper>
+    <Fullpage title="Quiénes somos" selfId={QUIENES_SOMOS} nextId={nextId}>
+      <Wrapper></Wrapper>
     </Fullpage>
   );
 };
 export default QuienesSomos;
 
-const Wrapper = styled.div`
-  flex: 1;
-`;
+const Wrapper = styled.div``;
