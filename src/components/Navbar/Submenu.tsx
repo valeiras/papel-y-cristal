@@ -10,7 +10,6 @@ const Submenu: React.FC<{
   subsections: string[];
   id: number;
 }> = ({ sectionName, subsections, id }) => {
-  const submenuContainerRef = useRef<HTMLDivElement>(null);
   const submenuLinksRef = useRef<HTMLDivElement>(null);
   const [linksHeight, setLinksHeight] = useState(0);
 
@@ -34,7 +33,7 @@ const Submenu: React.FC<{
   };
 
   return (
-    <SubmenuWrapper ref={submenuContainerRef} style={linkStyles}>
+    <SubmenuWrapper style={linkStyles}>
       <div className="links" ref={submenuLinksRef}>
         {subsections?.map((subsectionName: string) => {
           const url = `${getFriendlyUrl(sectionName)}/${getFriendlyUrl(
@@ -65,6 +64,8 @@ const SubmenuWrapper = styled.div`
   position: absolute;
   box-shadow: var(--shadow-1);
   .links {
+    margin-top: 1px;
+    background-color: var(--theme-color-white);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;

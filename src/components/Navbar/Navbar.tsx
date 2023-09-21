@@ -1,20 +1,23 @@
 /* eslint-disable react-refresh/only-export-components */
 import styled from 'styled-components';
-import { Logo, Navlinks, Toggle } from '..';
+import { Logo, MobileMenu, Navlinks, Toggle } from '..';
 import { createContext, useContext, useState } from 'react';
 
-interface ContextType {
+interface NavbarContextType {
   sectionId: number;
   setSectionId: React.Dispatch<React.SetStateAction<number>>;
   currSectionLeftPos: number;
   setCurrSectionLeftPos: React.Dispatch<React.SetStateAction<number>>;
+  showMobileMenu: boolean;
+  setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavbarContext = createContext<ContextType | null>(null);
+const NavbarContext = createContext<NavbarContextType | null>(null);
 
 const Navbar: React.FC = () => {
   const [sectionId, setSectionId] = useState(-1);
-  const [currSectionLeftPos, setCurrSectionLeftPos] = useState(-1);
+  const [currSectionLeftPos, setCurrSectionLeftPos] = useState(0);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <NavbarContext.Provider
@@ -23,6 +26,8 @@ const Navbar: React.FC = () => {
         setSectionId,
         currSectionLeftPos,
         setCurrSectionLeftPos,
+        showMobileMenu,
+        setShowMobileMenu,
       }}
     >
       <NavbarWrapper
@@ -35,6 +40,7 @@ const Navbar: React.FC = () => {
           <Navlinks />
           <Toggle />
         </div>
+        <MobileMenu />
       </NavbarWrapper>
     </NavbarContext.Provider>
   );
@@ -42,7 +48,7 @@ const Navbar: React.FC = () => {
 export default Navbar;
 
 export const useNavbarContext = () => {
-  return useContext(NavbarContext) as ContextType;
+  return useContext(NavbarContext) as NavbarContextType;
 };
 
 const NavbarWrapper = styled.nav`
