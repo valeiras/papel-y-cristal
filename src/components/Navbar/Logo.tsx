@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Logo: React.FC = () => {
   return (
-    <LogoWrapper>
+    <Wrapper>
       <NavLink
         to="/"
         onClick={() => {
@@ -13,12 +13,12 @@ const Logo: React.FC = () => {
       >
         <img src={logo} alt="Papel y cristal" className="logo-img" />
       </NavLink>
-    </LogoWrapper>
+    </Wrapper>
   );
 };
 export default Logo;
 
-const LogoWrapper = styled.div`
+const Wrapper = styled.div`
   height: 80%;
 
   .logo-img {

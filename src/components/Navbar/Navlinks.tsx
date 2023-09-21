@@ -9,7 +9,7 @@ const Navlinks: React.FC = () => {
   const { setSectionId, setCurrSectionLeftPos } = useNavbarContext();
 
   return (
-    <NavlinksWrapper>
+    <Wrapper>
       {sections.map(({ name, id, subsections, isExternalLink, href }) => {
         return (
           <div className="link-and-submenu-container">
@@ -42,12 +42,12 @@ const Navlinks: React.FC = () => {
           </div>
         );
       })}
-    </NavlinksWrapper>
+    </Wrapper>
   );
 };
 export default Navlinks;
 
-const NavlinksWrapper = styled.div`
+const Wrapper = styled.div`
   display: none;
   height: 100%;
 

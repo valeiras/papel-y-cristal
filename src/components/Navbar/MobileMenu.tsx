@@ -20,7 +20,7 @@ const MobileMenu: React.FC = () => {
   }, [showMobileMenu]);
 
   return (
-    <MobileMenuWrapper style={{ height: `${desiredMenuHeight}px` }}>
+    <Wrapper style={{ height: `${desiredMenuHeight}px` }}>
       <div className="links" ref={menuLinksRef}>
         {sections.map(({ id, name: sectionName, subsections }) => {
           return (
@@ -51,12 +51,12 @@ const MobileMenu: React.FC = () => {
           );
         })}
       </div>
-    </MobileMenuWrapper>
+    </Wrapper>
   );
 };
 export default MobileMenu;
 
-const MobileMenuWrapper = styled.div`
+const Wrapper = styled.div`
   overflow: hidden;
   text-align: left;
   margin: 0 auto;

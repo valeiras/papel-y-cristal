@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         setShowMobileMenu,
       }}
     >
-      <NavbarWrapper
+      <Wrapper
         onMouseLeave={() => {
           setSectionId(-1);
         }}
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
           <Toggle />
         </div>
         <MobileMenu />
-      </NavbarWrapper>
+      </Wrapper>
     </NavbarContext.Provider>
   );
 };
@@ -51,8 +51,9 @@ export const useNavbarContext = () => {
   return useContext(NavbarContext) as NavbarContextType;
 };
 
-const NavbarWrapper = styled.nav`
+const Wrapper = styled.nav`
   background: var(--theme-color-white);
+  z-index: 10;
   position: fixed;
   top: 0;
   width: 100%;

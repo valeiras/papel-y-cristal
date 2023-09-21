@@ -33,7 +33,7 @@ const Submenu: React.FC<{
   };
 
   return (
-    <SubmenuWrapper style={linkStyles}>
+    <Wrapper style={linkStyles}>
       <div className="links" ref={submenuLinksRef}>
         {subsections?.map((subsectionName: string) => {
           const url = `${getFriendlyUrl(sectionName)}/${getFriendlyUrl(
@@ -53,12 +53,12 @@ const Submenu: React.FC<{
           );
         })}
       </div>
-    </SubmenuWrapper>
+    </Wrapper>
   );
 };
 export default Submenu;
 
-const SubmenuWrapper = styled.div`
+const Wrapper = styled.div`
   transition: 0.5s ease-in-out height;
   overflow: hidden;
   position: absolute;

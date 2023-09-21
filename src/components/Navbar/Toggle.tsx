@@ -9,7 +9,7 @@ const Toggle: React.FC = () => {
   };
 
   return (
-    <ToggleWrapper>
+    <Wrapper>
       <button
         className={
           showMobileMenu
@@ -20,12 +20,12 @@ const Toggle: React.FC = () => {
       >
         <FaBars />
       </button>
-    </ToggleWrapper>
+    </Wrapper>
   );
 };
 export default Toggle;
 
-const ToggleWrapper = styled.div`
+const Wrapper = styled.div`
   @media (min-width: 992px) {
     display: none;
   }
