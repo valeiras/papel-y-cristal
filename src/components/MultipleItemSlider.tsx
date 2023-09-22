@@ -13,6 +13,21 @@ const settings = {
   autoplaySpeed: 3000,
   nextArrow: <FaChevronRight />,
   prevArrow: <FaChevronLeft />,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        vertical: true,
+      },
+    },
+  ],
 };
 
 const MultipleItemSlider: React.FC<{ items: sliderItemType[] }> = ({
@@ -23,13 +38,13 @@ const MultipleItemSlider: React.FC<{ items: sliderItemType[] }> = ({
       <Slider {...settings}>
         {items.map(({ name, img }) => {
           return (
-            <ItemContainer>
-              <ImgContainer>
+            <div className="item-container">
+              <div className="img-container">
                 <img src={img} alt={name} />
-              </ImgContainer>
-              <HorLine />
+              </div>
+              <div className="hor-line" />
               <h3>{name}</h3>
-            </ItemContainer>
+            </div>
           );
         })}
       </Slider>
@@ -47,29 +62,69 @@ const Wrapper = styled.div`
   .slick-next {
     color: var(--theme-color-dark-green);
   }
-`;
-const ItemContainer = styled.div`
-  padding-bottom: 1rem;
-  text-align: center;
-  text-transform: capitalize;
-`;
 
-const ImgContainer = styled.div`
-  width: 23vw;
-  height: 17vw;
-  margin: 0 auto;
-  background-color: var(--theme-color-green);
-  display: flex;
+  --laptop-width: 23vw;
+  --laptop-height: 17vw;
+  --laptop-img-width: 12vw;
+
+  --tablet-width: 34vw;
+  --tablet-height: 25vw;
+  --tablet-img-width: 17vw;
+
+  --mobile-width: 55vw;
+  --mobile-height: 40.5vw;
+  --mobile-img-width: 29vw;
+
+  .item-container {
+    padding-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .img-container {
+    width: var(--mobile-width);
+    height: var(--mobile-height);
+    margin: 0 auto;
+    background-color: var(--theme-color-green);
+    display: flex;
+  }
 
   img {
-    width: 12vw;
+    width: var(--mobile-img-width);
     margin: auto;
   }
-`;
 
-const HorLine = styled.div`
-  height: 1px;
-  width: 23vw;
-  background-color: var(--theme-color-dark-green);
-  margin: 1rem auto 1.5rem;
+  .hor-line {
+    height: 1px;
+    width: var(--mobile-width);
+    background-color: var(--theme-color-dark-green);
+    margin: 1rem auto 0.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .img-container {
+      width: var(--tablet-width);
+      height: var(--tablet-height);
+    }
+    img {
+      width: var(--tablet-img-width);
+    }
+    .hor-line {
+      width: var(--tablet-width);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .img-container {
+      width: var(--laptop-width);
+      height: var(--laptop-height);
+    }
+    img {
+      width: var(--laptop-img-width);
+    }
+    .hor-line {
+      width: var(--laptop-width);
+      margin: 1rem auto 0.5rem;
+    }
+  }
 `;
