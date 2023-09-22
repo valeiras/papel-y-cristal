@@ -78,7 +78,6 @@ h5 {
   font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1;
-  text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
 
@@ -153,19 +152,19 @@ ul {
 
 .btn {
   cursor: pointer;
-  color: var(--white);
-  background: var(--primary-500);
+  color: var(--theme-color-white);
+  background: var(--theme-color-dark-green);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 1rem;
   box-shadow: var(--shadow-1);
   transition: var(--transition);
   text-transform: capitalize;
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primary-700);
+  background: var(--theme-color-green);
   box-shadow: var(--shadow-3);
 }
 .btn-block {
@@ -273,3 +272,13 @@ ul {
 PROJECT CSS
 =============
 */
+.fullpage-container {
+  min-height: calc(100dvh - var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 10vw;
+}

@@ -3,7 +3,8 @@ import { useNavbarContext } from './Navbar';
 import { useRef, useState, useEffect } from 'react';
 import { sections } from '../../data/sections';
 import { Link } from 'react-router-dom';
-import { getFriendlyUrl } from '../../assets/js/utils';
+import { getFriendlyUrl } from '../../assets/ts/utils';
+import { nanoid } from 'nanoid';
 
 const MobileMenu: React.FC = () => {
   const { showMobileMenu, setShowMobileMenu } = useNavbarContext();
@@ -41,6 +42,7 @@ const MobileMenu: React.FC = () => {
                         subsectionName
                       )}`}
                       onClick={() => setShowMobileMenu(false)}
+                      key={nanoid()}
                     >
                       {subsectionName}
                     </Link>

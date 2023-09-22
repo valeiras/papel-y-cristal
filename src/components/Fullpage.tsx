@@ -79,6 +79,7 @@ const Wrapper = styled.div`
 
   .child-container {
     flex: 1;
+    position: relative;
   }
 
   &:nth-child(odd) {

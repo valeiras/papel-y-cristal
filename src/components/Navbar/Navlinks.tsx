@@ -3,18 +3,17 @@ import { sections } from '../../data/sections';
 import { NavLink } from 'react-router-dom';
 import { useNavbarContext } from './Navbar';
 import { Submenu } from '..';
-import { getFriendlyUrl } from '../../assets/js/utils';
+import { getFriendlyUrl } from '../../assets/ts/utils';
 
 const Navlinks: React.FC = () => {
   const { setSectionId, setCurrSectionLeftPos } = useNavbarContext();
 
   return (
     <Wrapper>
-      {sections.map(({ name, id, subsections, isExternalLink, href }) => {
+      {sections.map(({ name, id, subsections, staticUrl, outboundLink }) => {
         return (
-          <div className="link-and-submenu-container">
+          <div className="link-and-submenu-container" key={id}>
             <div
-              key={id}
               className="nav-item"
               onMouseEnter={(evt) => {
                 setSectionId(id);
@@ -23,13 +22,13 @@ const Navlinks: React.FC = () => {
                 setCurrSectionLeftPos(left);
               }}
             >
-              {isExternalLink ? (
-                <a href={href} target="_blank">
+              {outboundLink ? (
+                <a href={outboundLink} target="_blank">
                   {name}
                 </a>
               ) : (
                 <NavLink
-                  to={`/${getFriendlyUrl(name)}`}
+                  to={staticUrl ? staticUrl : `/${getFriendlyUrl(name)}`}
                   onClick={() => {
                     setSectionId(-1);
                   }}

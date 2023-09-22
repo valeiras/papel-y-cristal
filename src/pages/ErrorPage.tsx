@@ -14,10 +14,10 @@ const ErrorPage: React.FC = () => {
   }
 
   return (
-    <div id="error-page">
-      <h1 className="title-error">Ups...</h1>
-      <h2 className="subtitle-error">Algo ha salido mal...</h2>
-      <h4 className="status-error">{errorMessage}</h4>
+    <div className="fullpage-container">
+      <h1>Ups...</h1>
+      <h2>Algo ha salido mal...</h2>
+      <h4>{errorMessage}</h4>
     </div>
   );
 };

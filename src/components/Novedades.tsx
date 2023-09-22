@@ -1,4 +1,4 @@
-import { NOVEDADES } from '../assets/js/ids';
+import { NOVEDADES } from '../assets/ts/ids';
 import Fullpage from './Fullpage';
 import styled from 'styled-components';
 

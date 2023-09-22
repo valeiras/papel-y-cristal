@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useNavbarContext } from './Navbar';
 import { nanoid } from 'nanoid';
 import { Link } from 'react-router-dom';
-import { getFriendlyUrl } from '../../assets/js/utils';
+import { getFriendlyUrl } from '../../assets/ts/utils';
 
 const Submenu: React.FC<{
   sectionName: string;

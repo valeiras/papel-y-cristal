@@ -1,5 +1,5 @@
 import { Colecciones, Novedades, QuienesSomos } from '../components';
-import { COLECCIONES, QUIENES_SOMOS } from '../assets/js/ids';
+import { COLECCIONES, QUIENES_SOMOS } from '../assets/ts/ids';
 
 const Landing: React.FC = () => {
   return (

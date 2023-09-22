@@ -1,4 +1,5 @@
 export { default as Novedades } from './Novedades';
+export { default as MultipleItemSlider } from './MultipleItemSlider';
 
 // Catalogo
 export { default as Colecciones } from './Catalogo/Colecciones';

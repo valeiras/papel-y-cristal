@@ -1,4 +1,4 @@
-import { QUIENES_SOMOS } from '../../assets/js/ids';
+import { QUIENES_SOMOS } from '../../assets/ts/ids';
 import Fullpage from '../Fullpage';
 import styled from 'styled-components';
 
