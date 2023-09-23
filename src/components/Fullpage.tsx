@@ -34,6 +34,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem var(--side-padding) 1.5rem;
+  transition: var() (--transition);
 
   @media (min-width: 992px) {
     padding: 3rem var(--side-padding) 2rem;
