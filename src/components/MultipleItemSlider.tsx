@@ -36,13 +36,13 @@ const MultipleItemSlider: React.FC<{ items: sliderItemType[] }> = ({
   return (
     <Wrapper>
       <Slider {...settings}>
-        {items.map(({ name, img }) => {
+        {items.map(({ name, img, id }) => {
           return (
-            <div className="item-container">
+            <div className="item-container" key={id}>
               <div className="img-container">
                 <img src={img} alt={name} />
               </div>
-              <div className="hor-line" />
+              <div className="line" />
               <h3>{name}</h3>
             </div>
           );
@@ -105,13 +105,16 @@ const Wrapper = styled.div`
     margin: auto;
   }
 
-  .hor-line {
+  .line {
     height: 1px;
     width: var(--mobile-width);
     background-color: var(--theme-color-dark-green);
     margin: 0.5rem auto 0.5rem;
   }
 
+h3{
+  1.2rem;
+}
   @media (min-width: 600px) {
     .img-container {
       width: var(--tablet-width);
@@ -120,7 +123,7 @@ const Wrapper = styled.div`
     img {
       width: var(--tablet-img-width);
     }
-    .hor-line {
+    .line {
       width: var(--tablet-width);
     }
   }
@@ -137,7 +140,7 @@ const Wrapper = styled.div`
     img {
       width: var(--laptop-img-width);
     }
-    .hor-line {
+    .line {
       width: var(--laptop-width);
       margin: 1rem auto 0.5rem;
     }

@@ -1,4 +1,4 @@
-import { Navbar, NavbarSpacer } from '../components/';
+import { Navbar, NavbarSpacer, ContactFooter } from '../components/';
 import { Outlet } from 'react-router-dom';
 
 const HomeLayout: React.FC = () => {
@@ -7,6 +7,7 @@ const HomeLayout: React.FC = () => {
       <NavbarSpacer />
       <Navbar />
       <Outlet />
+      <ContactFooter />
     </main>
   );
 };

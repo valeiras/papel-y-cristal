@@ -4,6 +4,7 @@ import { useNavbarContext } from './Navbar';
 import { nanoid } from 'nanoid';
 import { Link } from 'react-router-dom';
 import { getFriendlyUrl } from '../../assets/ts/utils';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Submenu: React.FC<{
   sectionName: string;
@@ -29,18 +30,18 @@ const Submenu: React.FC<{
 
   const linkStyles = {
     height: `${linksHeight}px`,
-    left: `${currSectionLeftPos}px`,
+    left: `calc(${currSectionLeftPos}px + var(--navlink-left-padding) - var(--submenu-padding))`,
   };
 
   return (
     <Wrapper style={linkStyles}>
       <div className="links" ref={submenuLinksRef}>
         {subsections?.map((subsectionName: string) => {
-          const url = `${getFriendlyUrl(sectionName)}/${getFriendlyUrl(
+          const url = `${getFriendlyUrl(sectionName)}/#${getFriendlyUrl(
             subsectionName
           )}`;
           return (
-            <Link
+            <NavHashLink
               to={url}
               key={nanoid()}
               className="single-link"
@@ -49,7 +50,7 @@ const Submenu: React.FC<{
               }}
             >
               {subsectionName}
-            </Link>
+            </NavHashLink>
           );
         })}
       </div>
@@ -64,6 +65,7 @@ const Wrapper = styled.div`
   position: absolute;
   box-shadow: var(--shadow-1);
   background-color: var(--theme-color-white);
+  --submenu-padding: 1.5rem;
 
   .links {
     margin-top: 1px;

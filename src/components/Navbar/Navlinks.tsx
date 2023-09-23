@@ -17,8 +17,12 @@ const Navlinks: React.FC = () => {
               className="nav-item"
               onMouseEnter={(evt) => {
                 setSectionId(id);
-                const node = evt.target as HTMLElement;
+                const node = evt.currentTarget as HTMLElement;
                 const { left } = node.getBoundingClientRect();
+                console.log(evt.target);
+
+                console.log(node.getBoundingClientRect());
+
                 setCurrSectionLeftPos(left);
               }}
             >
@@ -31,6 +35,7 @@ const Navlinks: React.FC = () => {
                   to={staticUrl ? staticUrl : `/${getFriendlyUrl(name)}`}
                   onClick={() => {
                     setSectionId(-1);
+                    window.scrollTo(0, 0);
                   }}
                 >
                   {name}
@@ -57,7 +62,7 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1.5rem 0 1.5rem 3rem;
+    padding: 1.5rem 0 1.5rem var(--navlink-left-padding);
     text-align: right;
   }
 

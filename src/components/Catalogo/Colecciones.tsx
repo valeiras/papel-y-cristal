@@ -1,14 +1,14 @@
 import { COLECCIONES } from '../../assets/ts/ids';
-import Fullpage from '../Fullpage';
+import { Fullpage } from '../';
 import styled from 'styled-components';
 import { MultipleItemSlider } from '..';
-import { colections } from '../../data/colections';
+import { collections } from '../../data/collections';
 
 const Colecciones: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
     <Fullpage title="Colecciones" selfId={COLECCIONES} nextId={nextId}>
       <Wrapper>
-        <MultipleItemSlider items={colections}></MultipleItemSlider>
+        <MultipleItemSlider items={collections}></MultipleItemSlider>
       </Wrapper>
     </Fullpage>
   );

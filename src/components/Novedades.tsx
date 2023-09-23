@@ -1,5 +1,5 @@
 import { NOVEDADES } from '../assets/ts/ids';
-import Fullpage from './Fullpage';
+import { Fullpage } from './';
 import styled from 'styled-components';
 
 const Novedades: React.FC<{ nextId?: string }> = ({ nextId }) => {

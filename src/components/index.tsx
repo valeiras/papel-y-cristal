@@ -1,5 +1,7 @@
 export { default as Novedades } from './Novedades';
 export { default as MultipleItemSlider } from './MultipleItemSlider';
+export { default as Fullpage } from './Fullpage';
+export { default as ContactFooter } from './ContactFooter';
 
 // Catalogo
 export { default as Colecciones } from './Catalogo/Colecciones';
@@ -9,7 +11,10 @@ export { default as Autores } from './Catalogo/Autores';
 export { default as Distribucion } from './Editorial/Distribucion';
 export { default as EquipoEditorial } from './Editorial/EquipoEditorial';
 export { default as QuienesSomos } from './Editorial/QuienesSomos';
-export { default as RecepcionDeOriginales } from './Editorial/RecepcionDeOriginales';
+
+// Contacto
+export { default as Escribenos } from './Contacto/Escribenos';
+export { default as RecepcionDeOriginales } from './Contacto/RecepcionDeOriginales';
 
 // Navbar
 export { default as Navbar } from './Navbar/Navbar';

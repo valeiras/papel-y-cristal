@@ -1,5 +1,5 @@
 import { QUIENES_SOMOS } from '../../assets/ts/ids';
-import Fullpage from '../Fullpage';
+import { Fullpage } from '..';
 import styled from 'styled-components';
 
 const QuienesSomos: React.FC<{ nextId?: string }> = ({ nextId }) => {
