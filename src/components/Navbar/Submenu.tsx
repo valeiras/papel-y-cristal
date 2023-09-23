@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useRef, useState, useEffect } from 'react';
 import { useNavbarContext } from './Navbar';
 import { nanoid } from 'nanoid';
-import { Link } from 'react-router-dom';
 import { getFriendlyUrl } from '../../assets/ts/utils';
 import { NavHashLink } from 'react-router-hash-link';
 
