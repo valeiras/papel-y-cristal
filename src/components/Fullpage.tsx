@@ -28,7 +28,7 @@ const Fullpage: React.FC<{
 export default Fullpage;
 
 const Wrapper = styled.div`
-  min-height: calc(100lvh - var(--navbar-height));
+  min-height: calc(100dvh - var(--navbar-height));
   position: relative;
   scroll-margin-top: var(--navbar-height);
   display: flex;
