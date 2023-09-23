@@ -60,10 +60,10 @@ const Wrapper = styled.nav`
   height: fit-content;
   box-shadow: var(--shadow-1);
   transition: var(--transition);
+  padding: 0 var(--side-padding);
 
   .nav-center {
-    width: var(--fluid-width);
-    max-width: var(--max-width);
+    width: 100%;
     height: var(--navbar-height);
     margin: 0 auto;
     display: flex;

@@ -23,7 +23,7 @@ const Submenu: React.FC<{
     setLinksHeight(currHeight);
   }, [sectionId, id]);
 
-  if (sectionId !== id || subsections.length === 0) {
+  if (sectionId !== id || subsections?.length === 0) {
     return null;
   }
 

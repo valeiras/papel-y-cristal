@@ -34,6 +34,7 @@ const Navlinks: React.FC = () => {
                   }}
                 >
                   {name}
+                  <div className="underline"></div>
                 </NavLink>
               )}
             </div>
@@ -52,12 +53,30 @@ const Wrapper = styled.div`
 
   .nav-item {
     color: var(--theme-color-dar-green);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1.5rem 0 1.5rem 3rem;
+    text-align: right;
   }
+
+  .active .underline {
+    width: 100%;
+    height: 2px;
+    background-color: var(--theme-color-dark-green);
+    animation: line-appear 0.5s ease-in-out;
+  }
+
+  @keyframes line-appear {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   @media (min-width: 992px) {
     display: flex;
   }

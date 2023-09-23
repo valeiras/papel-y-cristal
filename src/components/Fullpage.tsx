@@ -33,9 +33,11 @@ const Wrapper = styled.div`
   scroll-margin-top: var(--navbar-height);
   display: flex;
   flex-direction: column;
-  padding: 3rem var(--side-padding) 2rem;
+  padding: 2rem var(--side-padding) 1.5rem;
 
-  --side-padding: 10vw;
+  @media (min-width: 992px) {
+    padding: 3rem var(--side-padding) 2rem;
+  }
 
   .arrow-down-btn {
     margin: 0 auto;
@@ -92,9 +94,6 @@ const Wrapper = styled.div`
   }
 
   &:nth-child(even) {
-    /* .hor-line {
-      margin-right: calc(var(--side-padding) * -1);
-    } */
     h1 {
       text-align: left;
     }

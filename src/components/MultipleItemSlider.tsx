@@ -56,11 +56,22 @@ export default MultipleItemSlider;
 const Wrapper = styled.div`
   .slick-prev:before,
   .slick-next:before {
-    color: var(--theme-color-dark-green);
+    color: transparent;
   }
   .slick-prev,
   .slick-next {
-    color: var(--theme-color-dark-green);
+    color: transparent;
+  }
+
+  @media (min-width: 992px) {
+    .slick-prev:before,
+    .slick-next:before {
+      color: var(--theme-color-dark-green);
+    }
+    .slick-prev,
+    .slick-next {
+      color: var(--theme-color-dark-green);
+    }
   }
 
   --laptop-width: 23vw;
@@ -76,7 +87,7 @@ const Wrapper = styled.div`
   --mobile-img-width: 29vw;
 
   .item-container {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     text-align: center;
     text-transform: capitalize;
   }
@@ -98,7 +109,7 @@ const Wrapper = styled.div`
     height: 1px;
     width: var(--mobile-width);
     background-color: var(--theme-color-dark-green);
-    margin: 1rem auto 0.5rem;
+    margin: 0.5rem auto 0.5rem;
   }
 
   @media (min-width: 600px) {
@@ -115,6 +126,10 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 992px) {
+    .hor-line {
+      margin: 1rem auto 0.5rem;
+    }
+
     .img-container {
       width: var(--laptop-width);
       height: var(--laptop-height);

@@ -23,7 +23,7 @@ export const sections = [
   },
   {
     name: 'Contacto',
-    subsections: ['Recepción de originales'],
+    subsections: [],
     id: 5,
   },
 ];
