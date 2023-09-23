@@ -112,9 +112,9 @@ const Wrapper = styled.div`
     margin: 0.5rem auto 0.5rem;
   }
 
-h3{
-  1.2rem;
-}
+  h3 {
+    font-size: 1.5rem;
+  }
   @media (min-width: 600px) {
     .img-container {
       width: var(--tablet-width);

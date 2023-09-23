@@ -8,7 +8,9 @@ const Colecciones: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
     <Fullpage title="Colecciones" selfId={COLECCIONES} nextId={nextId}>
       <Wrapper>
-        <MultipleItemSlider items={collections}></MultipleItemSlider>
+        <div className="inner-container">
+          <MultipleItemSlider items={collections}></MultipleItemSlider>
+        </div>
       </Wrapper>
     </Fullpage>
   );
@@ -16,9 +18,15 @@ const Colecciones: React.FC<{ nextId?: string }> = ({ nextId }) => {
 export default Colecciones;
 
 const Wrapper = styled.div`
-  width: 80vw;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  /* width: 80vw; */
+  min-height: 100%;
   color: var(--theme-color-dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner-container {
+    width: 80vw;
+    margin: auto;
+  }
 `;

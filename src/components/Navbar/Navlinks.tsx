@@ -62,8 +62,13 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1.5rem 0 1.5rem var(--navlink-left-padding);
+    padding: calc(1.5rem + 2px) 0 1.5rem var(--navlink-left-padding);
     text-align: right;
+  }
+
+  .underline {
+    width: 0%;
+    height: 2px;
   }
 
   .active .underline {
