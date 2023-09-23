@@ -54,6 +54,7 @@ const MultipleItemSlider: React.FC<{ items: sliderItemType[] }> = ({
 export default MultipleItemSlider;
 
 const Wrapper = styled.div`
+  margin: 1rem 0;
   .slick-prev:before,
   .slick-next:before {
     color: transparent;

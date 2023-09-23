@@ -28,13 +28,12 @@ const Fullpage: React.FC<{
 export default Fullpage;
 
 const Wrapper = styled.div`
-  min-height: calc(100dvh - var(--navbar-height));
+  min-height: calc(100svh - var(--navbar-height));
   position: relative;
   scroll-margin-top: var(--navbar-height);
   display: flex;
   flex-direction: column;
   padding: 2rem var(--side-padding) 1.5rem;
-  transition: var() (--transition);
 
   @media (min-width: 992px) {
     padding: 3rem var(--side-padding) 2rem;
