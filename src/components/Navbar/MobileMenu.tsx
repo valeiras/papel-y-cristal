@@ -81,4 +81,8 @@ const Wrapper = styled.div`
     gap: 0.5rem;
     padding: 0.5rem 0rem 1rem 1rem;
   }
+
+  .subsection-title {
+    font-size: 1.2rem;
+  }
 `;
