@@ -1,4 +1,4 @@
-export type sliderItemType = {
+export type itemType = {
   name: string;
   friendlyUrl: string;
   img: string;

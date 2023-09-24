@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { sliderItemType } from '../assets/ts/types';
+import { itemType } from '../assets/ts/types';
 import picture from '../assets/imgs/La_fuerza.jpg';
 import { nanoid } from 'nanoid';
 import { getFriendlyUrl } from '../assets/ts/utils';
@@ -9,8 +9,7 @@ const MARCAPAGINAS = 'Marcapáginas';
 const REMITE = 'Remite';
 const COLLAGE = 'Collage';
 
-
-export const collections: sliderItemType[] = [
+export const collections: itemType[] = [
   {
     name: ORIGAMI,
     friendlyUrl: getFriendlyUrl(ORIGAMI),
