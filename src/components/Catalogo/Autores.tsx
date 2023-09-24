@@ -1,10 +1,10 @@
-import { AUTORES } from '../../assets/ts/ids';
+import { AUTORES } from '../../assets/ts/names';
 import { Fullpage } from '../';
 import styled from 'styled-components';
 
 const Autores: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
-    <Fullpage title="Autores" selfId={AUTORES} nextId={nextId}>
+    <Fullpage title={AUTORES.name} selfId={AUTORES.friendlyUrl} nextId={nextId}>
       <Wrapper></Wrapper>
     </Fullpage>
   );

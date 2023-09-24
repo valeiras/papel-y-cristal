@@ -1,10 +1,14 @@
-import { DISTRIBUCION } from '../../assets/ts/ids';
+import { DISTRIBUCION } from '../../assets/ts/names';
 import { Fullpage } from '..';
 import styled from 'styled-components';
 
 const Distribucion: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
-    <Fullpage title="Distribución" selfId={DISTRIBUCION} nextId={nextId}>
+    <Fullpage
+      title={DISTRIBUCION.name}
+      selfId={DISTRIBUCION.friendlyUrl}
+      nextId={nextId}
+    >
       <Wrapper></Wrapper>
     </Fullpage>
   );

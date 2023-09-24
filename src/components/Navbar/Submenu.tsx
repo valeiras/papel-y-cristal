@@ -8,22 +8,22 @@ import { NavHashLink } from 'react-router-hash-link';
 const Submenu: React.FC<{
   sectionName: string;
   subsections: string[];
-  id: number;
-}> = ({ sectionName, subsections, id }) => {
+}> = ({ sectionName, subsections }) => {
   const submenuLinksRef = useRef<HTMLDivElement>(null);
   const [linksHeight, setLinksHeight] = useState(0);
 
-  const { sectionId, setSectionId, currSectionLeftPos } = useNavbarContext();
+  const { currSectionName, setCurrSectionName, currSectionLeftPos } =
+    useNavbarContext();
 
   useEffect(() => {
     const currHeight =
-      submenuLinksRef.current !== null && sectionId === id
+      submenuLinksRef.current !== null && currSectionName === sectionName
         ? submenuLinksRef.current.getBoundingClientRect().height
         : 0;
     setLinksHeight(currHeight);
-  }, [sectionId, id]);
+  }, [currSectionName, sectionName]);
 
-  if (sectionId !== id || subsections?.length === 0) {
+  if (currSectionName !== sectionName || subsections?.length === 0) {
     return null;
   }
 
@@ -45,7 +45,7 @@ const Submenu: React.FC<{
               key={nanoid()}
               className="single-link"
               onClick={() => {
-                setSectionId(-1);
+                setCurrSectionName('');
               }}
             >
               {subsectionName}

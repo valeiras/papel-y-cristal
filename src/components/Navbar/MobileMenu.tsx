@@ -5,7 +5,6 @@ import { sections } from '../../data/sections';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { getFriendlyUrl } from '../../assets/ts/utils';
-import { nanoid } from 'nanoid';
 
 const MobileMenu: React.FC = () => {
   const { showMobileMenu, setShowMobileMenu } = useNavbarContext();
@@ -24,9 +23,9 @@ const MobileMenu: React.FC = () => {
   return (
     <Wrapper style={{ height: `${desiredMenuHeight}px` }}>
       <div className="links" ref={menuLinksRef}>
-        {sections.map(({ id, name: sectionName, subsections }) => {
+        {sections.map(({ name: sectionName, subsections }) => {
           return (
-            <div className="section" key={id}>
+            <div className="section" key={sectionName}>
               <Link
                 className="section-title"
                 to={`/${getFriendlyUrl(sectionName)}`}
@@ -43,7 +42,7 @@ const MobileMenu: React.FC = () => {
                         subsectionName
                       )}`}
                       onClick={() => setShowMobileMenu(false)}
-                      key={nanoid()}
+                      key={subsectionName}
                     >
                       {subsectionName}
                     </HashLink>

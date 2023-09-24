@@ -35,15 +35,20 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 2rem var(--side-padding) 1.5rem;
 
-  @media (min-width: 992px) {
-    padding: 3rem var(--side-padding) 2rem;
-  }
-
   .arrow-down-btn {
     margin: 0 auto;
     cursor: pointer;
     font-size: 1.5rem;
     transition: var(--transition);
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    padding: 3rem var(--side-padding) 2rem;
+
+    .arrow-down-btn {
+      display: block;
+    }
   }
 
   .arrow-down-btn:hover {

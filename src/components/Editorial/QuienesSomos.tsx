@@ -1,10 +1,14 @@
-import { QUIENES_SOMOS } from '../../assets/ts/ids';
+import { QUIENES_SOMOS } from '../../assets/ts/names';
 import { Fullpage } from '..';
 import styled from 'styled-components';
 
 const QuienesSomos: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
-    <Fullpage title="Quiénes somos" selfId={QUIENES_SOMOS} nextId={nextId}>
+    <Fullpage
+      title={QUIENES_SOMOS.name}
+      selfId={QUIENES_SOMOS.friendlyUrl}
+      nextId={nextId}
+    >
       <Wrapper>
         <p>
           Somos una editorial independiente fundada en 2016, en el seno cultural
@@ -18,7 +22,7 @@ const QuienesSomos: React.FC<{ nextId?: string }> = ({ nextId }) => {
           En nuestras publicaciones tratamos poesía, narrativa e ilustración,
           poniendo siempre el máximo cuidado en todo lo que hacemos, revisando
           con mimo y detalle cada palabra, página y ejemplar para que llegue a
-          manos lectoras enperfecto estado.
+          manos lectoras en perfecto estado.
         </p>
         <p>
           Actualmente, estamos en proceso de crecimiento gracias a la sempiterna

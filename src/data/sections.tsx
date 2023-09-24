@@ -1,29 +1,37 @@
+import {
+  INICIO,
+  EDITORIAL,
+  CATALOGO,
+  TIENDA,
+  CONTACTO,
+  QUIENES_SOMOS,
+  EQUIPO_EDITORIAL,
+  DISTRIBUCION,
+  COLECCIONES,
+  AUTORES,
+} from '../assets/ts/names';
+
 export const sections = [
   {
-    name: 'Inicio',
+    name: INICIO.name,
     subsections: [],
-    id: 1,
     staticUrl: '/',
   },
   {
-    name: 'Editorial',
-    subsections: ['Quiénes somos', 'Equipo editorial', 'Distribución'],
-    id: 2,
+    name: EDITORIAL.name,
+    subsections: [QUIENES_SOMOS.name, EQUIPO_EDITORIAL.name, DISTRIBUCION.name],
   },
   {
-    name: 'Catálogo',
-    subsections: ['Colecciones', 'Autores'],
-    id: 3,
+    name: CATALOGO.name,
+    subsections: [COLECCIONES.name, AUTORES.name],
   },
   {
-    name: 'Tienda',
+    name: TIENDA.name,
     subsections: [],
-    id: 4,
     outboundLink: 'https://www.etsy.com/es/shop/papelycristal',
   },
   {
-    name: 'Contacto',
+    name: CONTACTO.name,
     subsections: [],
-    id: 5,
   },
 ];

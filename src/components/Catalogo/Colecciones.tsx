@@ -1,4 +1,4 @@
-import { COLECCIONES } from '../../assets/ts/ids';
+import { COLECCIONES } from '../../assets/ts/names';
 import { Fullpage } from '../';
 import styled from 'styled-components';
 import { MultipleItemSlider } from '..';
@@ -6,10 +6,17 @@ import { collections } from '../../data/collections';
 
 const Colecciones: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
-    <Fullpage title="Colecciones" selfId={COLECCIONES} nextId={nextId}>
+    <Fullpage
+      title={COLECCIONES.name}
+      selfId={COLECCIONES.friendlyUrl}
+      nextId={nextId}
+    >
       <Wrapper>
         <div className="inner-container">
-          <MultipleItemSlider items={collections}></MultipleItemSlider>
+          <MultipleItemSlider
+            items={collections}
+            basename={`/${COLECCIONES.friendlyUrl}`}
+          ></MultipleItemSlider>
         </div>
       </Wrapper>
     </Fullpage>

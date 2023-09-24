@@ -4,8 +4,8 @@ import { Logo, MobileMenu, Navlinks, Toggle } from '..';
 import { createContext, useContext, useState } from 'react';
 
 interface NavbarContextType {
-  sectionId: number;
-  setSectionId: React.Dispatch<React.SetStateAction<number>>;
+  currSectionName: string;
+  setCurrSectionName: React.Dispatch<React.SetStateAction<string>>;
   currSectionLeftPos: number;
   setCurrSectionLeftPos: React.Dispatch<React.SetStateAction<number>>;
   showMobileMenu: boolean;
@@ -15,15 +15,15 @@ interface NavbarContextType {
 const NavbarContext = createContext<NavbarContextType | null>(null);
 
 const Navbar: React.FC = () => {
-  const [sectionId, setSectionId] = useState(-1);
+  const [currSectionName, setCurrSectionName] = useState('');
   const [currSectionLeftPos, setCurrSectionLeftPos] = useState(0);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <NavbarContext.Provider
       value={{
-        sectionId,
-        setSectionId,
+        currSectionName,
+        setCurrSectionName,
         currSectionLeftPos,
         setCurrSectionLeftPos,
         showMobileMenu,
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
     >
       <Wrapper
         onMouseLeave={() => {
-          setSectionId(-1);
+          setCurrSectionName('');
         }}
       >
         <div className="nav-center">

@@ -6,22 +6,19 @@ import { Submenu } from '..';
 import { getFriendlyUrl } from '../../assets/ts/utils';
 
 const Navlinks: React.FC = () => {
-  const { setSectionId, setCurrSectionLeftPos } = useNavbarContext();
+  const { setCurrSectionName, setCurrSectionLeftPos } = useNavbarContext();
 
   return (
     <Wrapper>
-      {sections.map(({ name, id, subsections, staticUrl, outboundLink }) => {
+      {sections.map(({ name, subsections, staticUrl, outboundLink }) => {
         return (
-          <div className="link-and-submenu-container" key={id}>
+          <div className="link-and-submenu-container" key={name}>
             <div
               className="nav-item"
               onMouseEnter={(evt) => {
-                setSectionId(id);
+                setCurrSectionName(name);
                 const node = evt.currentTarget as HTMLElement;
                 const { left } = node.getBoundingClientRect();
-                console.log(evt.target);
-
-                console.log(node.getBoundingClientRect());
 
                 setCurrSectionLeftPos(left);
               }}
@@ -34,7 +31,7 @@ const Navlinks: React.FC = () => {
                 <NavLink
                   to={staticUrl ? staticUrl : `/${getFriendlyUrl(name)}`}
                   onClick={() => {
-                    setSectionId(-1);
+                    setCurrSectionName('');
                     window.scrollTo(0, 0);
                   }}
                 >
@@ -43,7 +40,7 @@ const Navlinks: React.FC = () => {
                 </NavLink>
               )}
             </div>
-            <Submenu sectionName={name} subsections={subsections} id={id} />
+            <Submenu sectionName={name} subsections={subsections} />
           </div>
         );
       })}

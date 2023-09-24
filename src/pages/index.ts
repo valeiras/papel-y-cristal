@@ -6,3 +6,5 @@ export { default as NotFound } from './NotFound';
 export { default as Editorial } from './Editorial';
 export { default as Catalogo } from './Catalogo';
 export { default as Contacto } from './Contacto';
+export { default as Coleccion } from './Coleccion';
+export { default as Autor } from './Autor';

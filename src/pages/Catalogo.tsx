@@ -1,10 +1,11 @@
 import { Colecciones, Autores } from '../components';
-import { AUTORES } from '../assets/ts/ids';
+import { AUTORES } from '../assets/ts/names';
+import { getFriendlyUrl } from '../assets/ts/utils';
 
 const Catalogo: React.FC = () => {
   return (
     <>
-      <Colecciones nextId={AUTORES} />
+      <Colecciones nextId={getFriendlyUrl(AUTORES)} />
       <Autores />
     </>
   );

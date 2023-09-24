@@ -13,7 +13,7 @@ export { default as EquipoEditorial } from './Editorial/EquipoEditorial';
 export { default as QuienesSomos } from './Editorial/QuienesSomos';
 
 // Contacto
-export { default as Escribenos } from './Contacto/Escribenos';
+export { default as ContactoCmp } from './Contacto/ContactoCmp';
 export { default as RecepcionDeOriginales } from './Contacto/RecepcionDeOriginales';
 
 // Navbar

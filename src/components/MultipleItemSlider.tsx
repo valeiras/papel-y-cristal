@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { sliderItemType } from '../assets/ts/types';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { getFriendlyUrl } from '../assets/ts/utils';
 
 const settings = {
   dots: false,
@@ -30,17 +32,23 @@ const settings = {
   ],
 };
 
-const MultipleItemSlider: React.FC<{ items: sliderItemType[] }> = ({
-  items,
-}) => {
+const MultipleItemSlider: React.FC<{
+  items: sliderItemType[];
+  basename: string;
+}> = ({ items, basename = '' }) => {
   return (
     <Wrapper>
       <Slider {...settings}>
         {items.map(({ name, img, id }) => {
           return (
             <div className="item-container" key={id}>
-              <div className="img-container">
-                <img src={img} alt={name} />
+              <div className="img-bg">
+                <Link
+                  to={`${basename}/${getFriendlyUrl(name)}`}
+                  className="img-link"
+                >
+                  <img src={img} alt={name} />
+                </Link>
               </div>
               <div className="line" />
               <h3>{name}</h3>
@@ -55,23 +63,20 @@ export default MultipleItemSlider;
 
 const Wrapper = styled.div`
   margin: 1rem 0;
-  .slick-prev:before,
-  .slick-next:before {
-    color: transparent;
-  }
+
   .slick-prev,
   .slick-next {
-    color: transparent;
+    color: var(--theme-color-dark-green);
   }
 
-  @media (min-width: 992px) {
-    .slick-prev:before,
-    .slick-next:before {
-      color: var(--theme-color-dark-green);
+  @media (max-width: 600px) {
+    .slick-prev {
+      transform: rotate(90deg);
+      margin-left: 1rem;
     }
-    .slick-prev,
     .slick-next {
-      color: var(--theme-color-dark-green);
+      transform: rotate(90deg);
+      margin-right: 1rem;
     }
   }
 
@@ -93,7 +98,7 @@ const Wrapper = styled.div`
     text-transform: capitalize;
   }
 
-  .img-container {
+  .img-bg {
     width: var(--mobile-width);
     height: var(--mobile-height);
     margin: 0 auto;
@@ -101,9 +106,13 @@ const Wrapper = styled.div`
     display: flex;
   }
 
-  img {
+  .img-link {
     width: var(--mobile-img-width);
     margin: auto;
+  }
+
+  img {
+    width: 100%;
   }
 
   .line {
@@ -117,11 +126,11 @@ const Wrapper = styled.div`
     font-size: 1.5rem;
   }
   @media (min-width: 600px) {
-    .img-container {
+    .img-bg {
       width: var(--tablet-width);
       height: var(--tablet-height);
     }
-    img {
+    .img-link {
       width: var(--tablet-img-width);
     }
     .line {
@@ -134,11 +143,11 @@ const Wrapper = styled.div`
       margin: 1rem auto 0.5rem;
     }
 
-    .img-container {
+    .img-bg {
       width: var(--laptop-width);
       height: var(--laptop-height);
     }
-    img {
+    .img-link {
       width: var(--laptop-img-width);
     }
     .line {

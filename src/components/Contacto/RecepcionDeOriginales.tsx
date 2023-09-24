@@ -1,12 +1,12 @@
-import { RECEPCION_DE_ORIGINALES } from '../../assets/ts/ids';
+import { RECEPCION_DE_ORIGINALES } from '../../assets/ts/names';
 import { Fullpage } from '..';
 import styled from 'styled-components';
 
 const RecepcionDeOriginales: React.FC<{ nextId?: string }> = ({ nextId }) => {
   return (
     <Fullpage
-      title="Recepción de originales"
-      selfId={RECEPCION_DE_ORIGINALES}
+      title={RECEPCION_DE_ORIGINALES.name}
+      selfId={RECEPCION_DE_ORIGINALES.friendlyUrl}
       nextId={nextId}
     >
       <Wrapper></Wrapper>

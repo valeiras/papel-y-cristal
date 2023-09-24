@@ -1,11 +1,12 @@
 import { Colecciones, Novedades, QuienesSomos } from '../components';
-import { COLECCIONES, QUIENES_SOMOS } from '../assets/ts/ids';
+import { COLECCIONES, QUIENES_SOMOS } from '../assets/ts/names';
+import { getFriendlyUrl } from '../assets/ts/utils';
 
 const Landing: React.FC = () => {
   return (
     <>
-      <Novedades nextId={COLECCIONES} />
-      <Colecciones nextId={QUIENES_SOMOS} />
+      <Novedades nextId={getFriendlyUrl(COLECCIONES)} />
+      <Colecciones nextId={getFriendlyUrl(QUIENES_SOMOS)} />
       <QuienesSomos />
     </>
   );
