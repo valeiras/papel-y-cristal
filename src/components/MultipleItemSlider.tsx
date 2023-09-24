@@ -123,8 +123,9 @@ const Wrapper = styled.div`
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
+
   @media (min-width: 600px) {
     .img-bg {
       width: var(--tablet-width);
@@ -136,13 +137,12 @@ const Wrapper = styled.div`
     .line {
       width: var(--tablet-width);
     }
+    h3 {
+      font-size: 1.4rem;
+    }
   }
 
   @media (min-width: 992px) {
-    .hor-line {
-      margin: 1rem auto 0.5rem;
-    }
-
     .img-bg {
       width: var(--laptop-width);
       height: var(--laptop-height);
@@ -152,7 +152,9 @@ const Wrapper = styled.div`
     }
     .line {
       width: var(--laptop-width);
-      margin: 1rem auto 0.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
     }
   }
 `;
