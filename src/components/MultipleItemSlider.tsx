@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { sliderItemType } from '../assets/ts/types';
+import { itemType } from '../assets/ts/types';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -33,7 +33,7 @@ const settings = {
 };
 
 const MultipleItemSlider: React.FC<{
-  items: sliderItemType[];
+  items: itemType[];
   basename: string;
 }> = ({ items, basename = '' }) => {
   return (
